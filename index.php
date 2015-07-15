@@ -104,7 +104,7 @@ if ($_POST) {
         <section>
           
           <div class="form-row form-first-name">
-            <input type="text" name="first-name" class="first-name text" placeholder="Your name" value="Nick Van Walleghem">
+            <input type="text" name="first-name" class="first-name text" placeholder="Your name">
           </div>
           
           <div class="form-row form-email">
@@ -127,11 +127,11 @@ if ($_POST) {
           </div>
           
           <div class="form-row form-number">
-            <input type="text" autocomplete="off" class="card-number text" value="4242424242424242">
+            <input type="text" autocomplete="off" class="card-number text" placeholder="Credit Card">
           </div>
           
           <div class="form-row form-cvc">
-            <input type="text" autocomplete="off" class="card-cvc text" value="123">
+            <input type="text" autocomplete="off" class="card-cvc text" placeholder="cvc">
           </div>
           
           <div class="form-row form-expiry">
