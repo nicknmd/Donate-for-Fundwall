@@ -1,0 +1,16 @@
+//
+// Base
+// ---------------------------------------------------------------------------
+
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+  font-family: $roboto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+}
+
+a, input {
+  outline: 0;
+}
