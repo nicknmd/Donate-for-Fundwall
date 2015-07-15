@@ -36,7 +36,7 @@
 		          	window.setTimeout(function(){
 
 				        // Move to a new location or you can do something else
-				        window.location.href = "http://localhost:9999/donate/done.php";
+				        window.location.href = "http://nickvw.be/fundwall/done.php";
 
 				    }, 2500);
 		   

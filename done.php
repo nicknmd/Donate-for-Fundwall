@@ -21,10 +21,10 @@
 			Thank you for your donation!
 		</h2>
 
-		<a href="http://localhost:9999/donate/">
+		<a href="http://nickvw.be/fundwall">
 			Back to form
 		</a>
-		
+
 	</div>
 
 </body>

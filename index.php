@@ -38,29 +38,30 @@ if ($_POST) {
         ));
 
 
-        // // Build and send the email
-        // $headers = 'From: ' . $config['emaily-from'];
-        // $headers .= "\r\nBcc: " . $config['emaily-bcc'] . "\r\n\r\n";
+        // Build and send the email
+        $headers = 'From: nick@digiti.be' . "\r\n" .
+    'Reply-To: nick@digiti.be' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-        // // Find and replace values
-        // $find    = array('%name%', '%amount%');
-        // $replace = array($name, '$' . $amount);
+        // Find and replace values
+        $find    = array('%name%', '%amount%');
+        $replace = array($name, '$' . $amount);
 
-        // $message = str_replace($find, $replace , $config['email-message']) . "\n\n";
-        // $message .= 'Amount: $' . $amount . "\n";
-        // $message .= 'Email: ' . $email . "\n";
-        // $message .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
-        // $message .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
+        $body = str_replace($find, $replace , $config['email-message']) . "\n\n";
+        $body .= 'Amount: $' . $amount . "\n";
+        $body .= 'Email: ' . $email . "\n";
+        $body .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
+        $body .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
 
-        // $subject = $config['email-subject'];
+        $subject = $config['email-subject'];
 
-        // // Send it
-        // if ( !$config['test-mode'] ) {
-        //     mail($email,$subject,$message,$headers);
-        // }
+        // Send it
+        if ( !$config['test-mode'] ) {
+            mail($email,$subject,$body,$headers);
+        }
 
         // Forward to "Thank You" page
-        header("Location: http://localhost:9999/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
+        header("Location: http://nickvw.be/fundwall/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
         exit;
 
     } catch (Exception $e) {
