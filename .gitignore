@@ -1,1 +1,7 @@
 .DS_Store
+
+# Sass Stuff
+.sass-cache
+
+# Node
+css/node_modules

@@ -1,0 +1,18 @@
+//
+// Base
+// ---------------------------------------------------------------------------
+
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+  font-family: $roboto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  color: $text-color;
+  background: $bg-color;
+}
+
+a, input {
+  outline: 0;
+}
