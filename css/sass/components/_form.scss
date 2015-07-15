@@ -1,0 +1,36 @@
+//
+// Form elements
+// ---------------------------------------------------------------------------
+
+.form-row {
+  margin: 0px 0px 15px 0px;
+  
+  textarea,
+  select,
+  button {
+    font-family: $roboto;
+    -webkit-appearance: none;
+  }
+  
+  input.text{
+    width: 100%;
+    padding: 5px 10px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $text-color;
+    font-weight: 300;
+    @include box-sizing(border-box);
+    
+    @include placeholder{
+      color: $text-light-color;
+    font-weight: 300;
+    }
+  }
+  
+  &:last-child {
+    margin: 0px;
+  }
+}

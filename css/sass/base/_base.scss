@@ -9,6 +9,8 @@ html {
   font-family: $roboto;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
+  color: $text-color;
+  background: $bg-color;
 }
 
 a, input {

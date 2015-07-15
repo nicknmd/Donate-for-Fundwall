@@ -1,0 +1,80 @@
+//
+// Modal
+// ---------------------------------------------------------------------------
+
+.modal {
+  display: block;
+  max-width: 400px;
+  margin: 40px auto;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+  
+  header {
+    position: relative;
+    min-height: 70px;
+    padding: 20px 20px 20px 110px;
+    border-bottom: 1px solid $border-color;
+    
+    .logo {
+      display: block;
+      width: 70px; height: 70px;
+      position: absolute;
+      left: 20px; top: 20px;
+      overflow: hidden;
+      
+      img {
+        max-width: 100%;
+      }
+    } 
+    
+    h2 {
+      font-size: 14px;
+      padding-bottom: 5px;
+    }
+    
+    h3 {
+      font-size: 16px; 
+      line-height: 21px;
+      color: $main-color;
+      font-weight: 300;
+    }
+  }
+   
+  section {
+    padding: 20px;
+    border-bottom: 1px solid $border-color; 
+    
+    &:nth-child(even) {
+      background: $bg-alt-color;
+    }
+  }
+  
+  footer {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .modal {
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    box-shadow: none;
+    
+    header {
+      padding-left: 100px;
+      min-height: 60px;
+
+      .logo {
+        width: 60px;
+      }
+      
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+}
