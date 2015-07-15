@@ -67,44 +67,7 @@ if ($_POST) {
     } catch (Exception $e) {
         $error = $e->getMessage();
     }
-
-    // Charge the card
-    $donation = Stripe_Charge::create(array(
-      'card'    => $token,
-      'description' => 'Donation by ' . $name . ' (' . $email . ') - ' . $message,
-      'amount'    => $amount * 100,
-      'currency'  => 'usd'
-    ));
-
-
-    // // Build and send the email
-    // $headers = 'From: ' . $config['emaily-from'];
-    // $headers .= "\r\nBcc: " . $config['emaily-bcc'] . "\r\n\r\n";
-
-    // // Find and replace values
-    // $find  = array('%name%', '%amount%');
-    // $replace = array($name, '$' . $amount);
-
-    // $message = str_replace($find, $replace , $config['email-message']) . "\n\n";
-    // $message .= 'Amount: $' . $amount . "\n";
-    // $message .= 'Email: ' . $email . "\n";
-    // $message .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
-    // $message .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
-
-    // $subject = $config['email-subject'];
-
-    // // Send it
-    // if ( !$config['test-mode'] ) {
-    //   mail($email,$subject,$message,$headers);
-    // }
-
-    // Forward to "Thank You" page
-    header("Location: http://localhost:9999/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
-    exit;
-
-  } catch (Exception $e) {
-    $error = $e->getMessage();
-  }
+   
 }
 ?>
 <!DOCTYPE html>
@@ -141,7 +104,7 @@ if ($_POST) {
         <section>
           
           <div class="form-row form-first-name">
-            <input type="text" name="first-name" class="first-name text" placeholder="Your name" value="Nick Van Wallegem">
+            <input type="text" name="first-name" class="first-name text" placeholder="Your name" value="Nick Van Walleghem">
           </div>
           
           <div class="form-row form-email">
