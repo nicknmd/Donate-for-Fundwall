@@ -94,7 +94,7 @@ if ($_POST) {
             <img src="assets/logo.svg" />
           </div>
           <h2>Belcham</h2>
-          <h3>Help us raise money to support Belgium students in the USA.</h3>
+          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
         </header>
     
         <div class="messages">
@@ -123,7 +123,7 @@ if ($_POST) {
             <label><input type="radio" name="amount" class="set-amount" value="25"> $25</label>
             <label><input type="radio" name="amount" class="set-amount" value="50"> $50</label>
             <label><input type="radio" name="amount" class="set-amount" value="100"> $100</label>
-            <label><input type="radio" name="amount" class="other-amount" value="0"> Other:</label> <input type="text" class="amount text" disabled>
+            <label><input type="radio" name="amount" class="other-amount" value="0"> Other:</label> <input type="text" class="amount text" placeholder="Amount" disabled>
           </div>
           
           <div class="form-row form-number">
@@ -131,7 +131,7 @@ if ($_POST) {
           </div>
           
           <div class="form-row form-cvc">
-            <input type="text" autocomplete="off" class="card-cvc text" placeholder="cvc">
+            <input type="text" autocomplete="off" class="card-cvc text" placeholder="CVC">
           </div>
           
           <div class="form-row form-expiry">
