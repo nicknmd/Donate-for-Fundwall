@@ -163,7 +163,7 @@ if ($_POST) {
         
         <footer>
           <div class="form-row form-submit">
-            <input type="submit" class="submit-button" value="Submit Donation">
+            <input type="submit" class="submit-button" value="Submit Donation" style="border:none; width: 100%; background: #EE212E; color:#FFF; height: 40px; line-height: 40px; font-size:16px; padding:0px; border-radius: 5px; font-weight: 300; cursor: pointer; ">
           </div>
         </footer>
         

@@ -62,14 +62,14 @@
         
         <section>
           
-          <h1>
+          <h1 style="font-weight: 700">
 			Donation Succeeded! 
 		  </h1>
-
+		  <br>
 		  <h2>
 				Thank you for your donation.
 		  </h2>
-
+		  <br>
 		   <a href="http://nickvw.be/fundwall">
 				Back to form
 		   </a>
