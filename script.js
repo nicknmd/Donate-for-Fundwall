@@ -7,6 +7,7 @@ $(function() {
 	var $form        = $('.donation-form');
 	var $otherAmount = $form.find('.other-amount');
 	var $amount      = $form.find('.amount');
+	var $segmented   = $form.find('.has-segmented-picker');
 	var outputError = function(error) {
 		$('.messages')
 			.html('<p>' + error + '</p>')
@@ -25,12 +26,14 @@ $(function() {
 		}
 	};
 	var disableinput = function(amount) {
-		$amount
-			.val(amount)
-			.blur()
-			.prop('disabled');
+		$amount.val(amount).blur().prop('disabled');
+		$amount.parent().addClass('hidden');
+		$segmented.removeClass('stick-to-next');
 	};
 	var enableinput = function() {
+		$amount.val('');
+		$amount.parent().removeClass('hidden');
+		$segmented.addClass('stick-to-next');
 		$amount
 			.removeProp('disabled')
 			.focus();
@@ -78,10 +81,10 @@ $(function() {
 
 		$label.addClass('active').parent().children('label').removeClass('active');
 
-		if ( $label.index() === 3 ) {
+		if ( $label.parent().index() === 3 ) {
 			enableinput();
 		} else {
-			disableinput($label.find('.set-amount').val());
+			disableinput($label.parent().find('input').val());
 		}
 
 	});

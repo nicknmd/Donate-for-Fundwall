@@ -1,0 +1,16 @@
+//
+// Messages
+// ---------------------------------------------------------------------------
+
+.messages {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  @include box-sizing(border-box);
+  
+  p {
+    padding: 15px 20px 15px 20px;
+    color: #FFF;
+    background: red;
+  }
+}
