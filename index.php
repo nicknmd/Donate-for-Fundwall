@@ -75,7 +75,7 @@ if ($_POST) {
 <head>
   <meta charset="UTF-8">
   <title>Stripe Donation Form</title>
-  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://js.stripe.com/v2"></script>
   <script type="text/javascript">
     Stripe.setPublishableKey('<?php echo $config['publishable-key'] ?>');
@@ -91,7 +91,7 @@ if ($_POST) {
         
         <header>
           <div class="logo">
-            <img src="assets/logo.svg" />
+            <img src="assets/img/logo.svg" />
           </div>
           <h2>Belcham</h2>
           <h3>Help us to raise funds to support Belgian students in the USA.</h3>
@@ -103,67 +103,94 @@ if ($_POST) {
         
         <section>
           
-          <div class="form-row form-first-name">
+          <div class="form-row has-icon form-first-name">
             <input type="text" name="first-name" class="first-name text" placeholder="Your name">
+            <em class="icon">u</em>
           </div>
           
-          <div class="form-row form-email">
+          <div class="form-row has-icon form-email">
             <input type="text" name="email" class="email text" placeholder="Your email">
+            <em class="icon">e</em>
           </div>
   
-          <div class="form-row form-message">
+          <div class="form-row has-icon form-message">
             <input type="text" row="3" name="message" class="message text" placeholder="Optional Message">
+            <em class="icon">m</em>
           </div>
           
         </section>
         
         <section>
   
-          <div class="form-row form-amount">
-            <label><input type="radio" name="amount" class="set-amount" value="25"> $25</label>
-            <label><input type="radio" name="amount" class="set-amount" value="50"> $50</label>
-            <label><input type="radio" name="amount" class="set-amount" value="100"> $100</label>
-            <label><input type="radio" name="amount" class="other-amount" value="0"> Other:</label> <input type="text" class="amount text" placeholder="Amount" disabled>
+          <div class="form-row form-amount has-segmented-picker">
+            <ul class="segemented-picker">
+              <li class="set-amount">
+                <input type="radio" name="amount" value="25" id="amount-25" checked="checked">
+                <label for="amount-25">$25</label>
+              </li>
+              <li class="set-amount">
+                <input type="radio" name="amount" value="50" id="amount-50">
+                <label for="amount-50"> $50</label>
+              </li>
+              <li class="set-amount">
+                <input type="radio" name="amount" value="100" id="amount-100">
+                <label for="amount-100"> $100</label>
+              </li>
+              <li class="other-amount">
+                <input type="radio" name="amount" value="0" id="amount-other">
+                <label for="amount-other" class="other"> Other</label> 
+              </li>
+            </ul>
           </div>
           
-          <div class="form-row form-number">
-            <input type="text" autocomplete="off" class="card-number text" placeholder="Credit Card">
+          <div class="form-row has-icon stick-to-previous form-amount hidden">
+            <input type="text" class="amount text" placeholder="Amount" disabled>
+            <em class="icon">$</em>
           </div>
           
-          <div class="form-row form-cvc">
-            <input type="text" autocomplete="off" class="card-cvc text" placeholder="CVC">
+          <div class="form-row has-icon form-number">
+            <input type="text" autocomplete="off" class="card-number text" placeholder="0000 0000 0000 0000">
+            <em class="icon">c</em>
           </div>
           
-          <div class="form-row form-expiry">
-            <select class="card-expiry-month text">
-              <option value="01" selected>January</option>
-              <option value="02">February</option>
-              <option value="03">March</option>
-              <option value="04">April</option>
-              <option value="05">May</option>
-              <option value="06">June</option>
-              <option value="07">July</option>
-              <option value="08">August</option>
-              <option value="09">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
+          <div class="form-row">
+            <div class="pull-left">
+              <select class="compact card-expiry-month" dir="rtl">
+                <option value="" selected>Month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              /
+              <select class="compact card-expiry-year ">
+                <option value="" selected>Year</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
             </select>
-            <select class="card-expiry-year text">
-              <option value="2015" selected>2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-            </select>
+            </div>
+            <div class="pull-right">
+              <input type="text" autocomplete="off" class="card-cvc text compact" placeholder="CVC" size="10" maxlength="3">
+            </div>
           </div>
         
         </section>
         
         <footer>
           <div class="form-row form-submit">
-            <input type="submit" class="submit-button" value="Submit Donation" style="border:none; width: 100%; background: #EE212E; color:#FFF; height: 40px; line-height: 40px; font-size:16px; padding:0px; border-radius: 5px; font-weight: 300; cursor: pointer; ">
+            <input type="submit" class="submit-button btn btn-action btn-full" value="Submit Donation">
           </div>
         </footer>
         

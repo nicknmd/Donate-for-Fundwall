@@ -1,0 +1,34 @@
+//
+// Button
+// ---------------------------------------------------------------------------
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  height: 40px; 
+  line-height: 40px;
+  text-align: center;
+  padding: 0px 15px;
+  font-size: 14px;
+  font-family: $roboto;
+  cursor: pointer;
+}
+
+.btn-action {
+  background: $main-color;
+  color: #FFF;
+  
+  &:hover {
+    background: lighten($main-color,10);
+  }
+  
+  &:focus,
+  &:active {
+    background: darken($main-color,10);
+  }
+}
+
+.btn-full {
+  width: 100%;
+  @include box-sizing(border-box);
+}

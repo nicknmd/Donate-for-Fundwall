@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         options: {
           config: 'config.rb',
           sassDir: 'sass/',
-          cssDir: '../',
+          cssDir: '../assets/css/',
           quiet: true
         }
       }
