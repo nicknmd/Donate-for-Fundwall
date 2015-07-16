@@ -11,15 +11,6 @@ return array(
     // Publishable Key from Stripe.com Dashboard
     'publishable-key' => 'pk_test_zpURMKzDvRiFGEEBAonz8Ru2',
 
-    // Where to send upon successful donation (must include http://)
-    'thank-you'       => 'http://localhost:9999/donate/thankyou.html',
-
-    // Who the email will be from.
-    'email-from'      => 'test@test.com',
-
-    // Who should be BCC'd on this email. Probably an administrative email.
-    'email-bcc'       => 'nick@digiti.be',
-
     // Subject of email receipt
     'email-subject'   => 'Thank you for your donation!',
 

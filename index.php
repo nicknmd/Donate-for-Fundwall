@@ -14,58 +14,60 @@ $config = require('config.php');
 // }
 
 if ($_POST) {
-  Stripe::setApiKey($config['secret-key']);
+    Stripe::setApiKey($config['secret-key']);
 
-  // POSTed Variables
-  $token    = $_POST['stripeToken'];
-  $name = $_POST['first-name'];
-  //$last_name  = $_POST['last-name'];
-  $email    = $_POST['email'];
-  $message   = $_POST['message'];
-  $amount   = (float) $_POST['amount'];
+    // POSTed Variables
+    $token      = $_POST['stripeToken'];
+    $name = $_POST['first-name'];
+    //$last_name  = $_POST['last-name'];
+    $email      = $_POST['email'];
+    $message     = $_POST['message'];
+    $amount     = (float) $_POST['amount'];
 
-  try {
-    if ( ! isset($_POST['stripeToken']) ) {
-      throw new Exception("The Stripe Token was not generated correctly");
+    try {
+        if ( ! isset($_POST['stripeToken']) ) {
+            throw new Exception("The Stripe Token was not generated correctly");
+        }
+
+        // Charge the card
+        $donation = Stripe_Charge::create(array(
+            'card'        => $token,
+            'description' => 'Donation by ' . $name . ' (' . $email . ') - ' . $message,
+            'amount'      => $amount * 100,
+            'currency'    => 'usd'
+        ));
+
+
+        // Build and send the email
+        $headers = 'From: nick@digiti.be' . "\r\n" .
+    'Reply-To: nick@digiti.be' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+        // Find and replace values
+        $find    = array('%name%', '%amount%');
+        $replace = array($name, '$' . $amount);
+
+        $body = str_replace($find, $replace , $config['email-message']) . "\n\n";
+        $body .= 'Amount: $' . $amount . "\n";
+        $body .= 'Email: ' . $email . "\n";
+        $body .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
+        $body .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
+
+        $subject = $config['email-subject'];
+
+        // Send it
+        if ( !$config['test-mode'] ) {
+            mail($email,$subject,$body,$headers);
+        }
+
+        // Forward to "Thank You" page
+        header("Location: http://nickvw.be/fundwall/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
+        exit;
+
+    } catch (Exception $e) {
+        $error = $e->getMessage();
     }
-
-    // Charge the card
-    $donation = Stripe_Charge::create(array(
-      'card'    => $token,
-      'description' => 'Donation by ' . $name . ' (' . $email . ') - ' . $message,
-      'amount'    => $amount * 100,
-      'currency'  => 'usd'
-    ));
-
-
-    // // Build and send the email
-    // $headers = 'From: ' . $config['emaily-from'];
-    // $headers .= "\r\nBcc: " . $config['emaily-bcc'] . "\r\n\r\n";
-
-    // // Find and replace values
-    // $find  = array('%name%', '%amount%');
-    // $replace = array($name, '$' . $amount);
-
-    // $message = str_replace($find, $replace , $config['email-message']) . "\n\n";
-    // $message .= 'Amount: $' . $amount . "\n";
-    // $message .= 'Email: ' . $email . "\n";
-    // $message .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
-    // $message .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
-
-    // $subject = $config['email-subject'];
-
-    // // Send it
-    // if ( !$config['test-mode'] ) {
-    //   mail($email,$subject,$message,$headers);
-    // }
-
-    // Forward to "Thank You" page
-    header("Location: http://localhost:9999/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
-    exit;
-
-  } catch (Exception $e) {
-    $error = $e->getMessage();
-  }
+   
 }
 ?>
 <!DOCTYPE html>
@@ -92,7 +94,7 @@ if ($_POST) {
             <img src="assets/logo.svg" />
           </div>
           <h2>Belcham</h2>
-          <h3>Help us raise money to support Belgium students in the USA.</h3>
+          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
         </header>
     
         <div class="messages">
@@ -102,7 +104,7 @@ if ($_POST) {
         <section>
           
           <div class="form-row form-first-name">
-            <input type="text" name="first-name" class="first-name text" placeholder="Your name" value="Nick Van Wallegem">
+            <input type="text" name="first-name" class="first-name text" placeholder="Your name">
           </div>
           
           <div class="form-row form-email">
@@ -121,15 +123,15 @@ if ($_POST) {
             <label><input type="radio" name="amount" class="set-amount" value="25"> $25</label>
             <label><input type="radio" name="amount" class="set-amount" value="50"> $50</label>
             <label><input type="radio" name="amount" class="set-amount" value="100"> $100</label>
-            <label><input type="radio" name="amount" class="other-amount" value="0"> Other:</label> <input type="text" class="amount text" disabled>
+            <label><input type="radio" name="amount" class="other-amount" value="0"> Other:</label> <input type="text" class="amount text" placeholder="Amount" disabled>
           </div>
           
           <div class="form-row form-number">
-            <input type="text" autocomplete="off" class="card-number text" value="4242424242424242">
+            <input type="text" autocomplete="off" class="card-number text" placeholder="Credit Card">
           </div>
           
           <div class="form-row form-cvc">
-            <input type="text" autocomplete="off" class="card-cvc text" value="123">
+            <input type="text" autocomplete="off" class="card-cvc text" placeholder="CVC">
           </div>
           
           <div class="form-row form-expiry">
@@ -161,7 +163,7 @@ if ($_POST) {
         
         <footer>
           <div class="form-row form-submit">
-            <input type="submit" class="submit-button" value="Submit Donation">
+            <input type="submit" class="submit-button" value="Submit Donation" style="border:none; width: 100%; background: #EE212E; color:#FFF; height: 40px; line-height: 40px; font-size:16px; padding:0px; border-radius: 5px; font-weight: 300; cursor: pointer; ">
           </div>
         </footer>
         

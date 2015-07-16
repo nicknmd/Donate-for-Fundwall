@@ -6,26 +6,51 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Stripe Donation Form</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
+  <div class="app">
+    <form action="#" method="POST" class="donation-form">
+      <div class="modal">
+        
+        <header>
+          <div class="logo">
+            <img src="assets/logo.svg" />
+          </div>
+          <h2>Belcham</h2>
+          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
+        </header>
+    
+        <div class="messages">
+          <!-- Error messages go here go here -->
+        </div>
+        
+        <section>
+          
+          <h1 style="font-weight: 700">
+			Donation Succeeded! 
+		  </h1>
+		  <br>
+		  <h2>
+				Thank you for your donation.
+		  </h2>
+		  <br>
+		   <a href="http://nickvw.be/fundwall">
+				Back to form
+		   </a>
+          
+        </section>
+        
+        
+      </div>
+    </form>
+  </div>
 
-	<div class="wrapper">
-
-		<h1>
-			FundWall
-		</h1>
-
-		<h2>
-			Thank you for your donation!
-		</h2>
-
-		<a href="http://localhost:9999/donate/">
-			Back to form
-		</a>
-		
-	</div>
+  <script>if (window.Stripe) $('.donation-form').show()</script>
+  <noscript><p>JavaScript is required for the donation form.</p></noscript>
 
 </body>
 </html>

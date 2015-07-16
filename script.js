@@ -78,7 +78,7 @@ $(function() {
 
 		$label.addClass('active').parent().children('label').removeClass('active');
 
-		if ( $label.index() === 6 ) {
+		if ( $label.index() === 3 ) {
 			enableinput();
 		} else {
 			disableinput($label.find('.set-amount').val());
