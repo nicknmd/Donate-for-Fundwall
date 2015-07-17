@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Stripe Donation Form</title>
-  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -51,7 +51,7 @@
         
         <header>
           <div class="logo">
-            <img src="assets/logo.svg" />
+            <img src="assets/img/logo.svg" />
           </div>
           <h2>Belcham</h2>
           <h3>Help us to raise funds to support Belgian students in the USA.</h3>
@@ -62,20 +62,13 @@
         </div>
         
         <section>
-          
-          <h1 style="font-weight: 700">
-			Donation Succeeded! 
-		  </h1>
-		  <br>
-		  <h2>
-				Thank you for your donation.
-		  </h2>
-		  <br>
-		   <a href="http://nickvw.be/fundwall">
-				Back to form
-		   </a>
-          
+          <div class="large-icon"><em class="icon">v</em></div>
+          <h1> Thank you for your donation. </h1>
         </section>
+        
+        <footer>
+    		  <a href="index.php" class="btn btn-m btn-action"> Back to form </a>
+        </footer>
         
         
       </div>

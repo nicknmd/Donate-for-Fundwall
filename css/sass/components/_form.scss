@@ -5,7 +5,7 @@
 .form-row {
   position: relative;
   margin: 0px 0px 15px 0px;
-  line-height: 30px;
+  line-height: 40px;
   color: $text-light-color;
   zoom:1;
   
@@ -34,18 +34,18 @@
   &.has-icon {
     em {
       display: block;
-      width: 30px; height: 30px;
+      width: 40px; height: 30px;
       position: absolute;
       left: 0px; top:0px;
-      line-height: 30px;
+      line-height: 40px;
       text-align: center;
       color: $main-color;
       pointer-events: none;
-      font-size: 14px;
+      font-size: 16px;
     } 
     
     input.text {
-      padding-left: 30px;
+      padding-left: 40px;
     }
   }
   
@@ -78,8 +78,8 @@
   input.text {
     width: 100%;
     padding: 5px 10px;
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     border: 1px solid $border-color;
     border-radius: 5px;
     font-size: 14px;
@@ -101,8 +101,8 @@
   
   select {
     padding: 5px 10px;
-    height: 30px;
-    line-height: 20px;
+    height: 40px;
+    line-height: 30px;
     border: 1px solid $border-color;
     border-radius: 5px;
     font-size: 14px;
@@ -137,7 +137,7 @@
       
       li {
         display: table-cell;
-        height: 30px;
+        height: 40px;
         border-right: 1px solid $border-color;
         
         &:last-child {
