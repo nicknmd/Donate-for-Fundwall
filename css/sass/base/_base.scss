@@ -13,6 +13,11 @@ html {
   background: $bg-color;
 }
 
-a, input {
+a, 
+input,
+select,
+textarea,
+button {
   outline: 0;
+  -webkit-appearance: none;
 }
