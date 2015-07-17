@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>Stripe Donation Form</title>
+	<title>BelCham - Donate now</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -64,10 +64,11 @@
         <section>
           <div class="large-icon"><em class="icon">v</em></div>
           <h1> Thank you for your donation. </h1>
+          <p class="center"> We have sent you a receipt-email from this donation.</p>
         </section>
         
         <footer>
-    		  <a href="index.php" class="btn btn-m btn-action"> Back to form </a>
+    		  <a href="index.php" class="btn btn-m btn-action"> Back To Form </a>
         </footer>
         
         

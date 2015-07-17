@@ -40,6 +40,13 @@
       @include animation(bounce 0.5s);
     }
   }
+  
+  .center {
+    text-align: center;
+    padding: 5px 0;
+    color: #999;
+    line-height: 20px;
+  }
 
   header {
     position: relative;
