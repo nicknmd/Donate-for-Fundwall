@@ -74,7 +74,7 @@ if ($_POST) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stripe Donation Form</title>
+  <title>Belcham - Donate now</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://js.stripe.com/v2"></script>
   <script type="text/javascript">

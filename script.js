@@ -15,6 +15,8 @@ $(function() {
 		$('.submit-button')
 			.removeProp('disabled')
 			.val('Submit Donation');
+		$("html, body")
+		  .animate({ scrollTop:102  },"slow");
 	};
 	var stripeResponseHandler = function(status, response) {
 		if (response.error) {

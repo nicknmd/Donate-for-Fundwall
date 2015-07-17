@@ -8,8 +8,39 @@
   margin: 40px auto;
   border: 1px solid $border-color;
   border-radius: 8px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+  background: #FFF;
+    
+  h1 {
+    font-size: 16px;
+    padding-bottom: 5px;
+    text-align: center;
+  } 
   
+  h2 {
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
+  
+  h3 {
+    font-size: 16px; 
+    line-height: 21px;
+    color: $main-color;
+    font-weight: 300;
+  }
+  
+  .large-icon {
+    font-size: 60px;
+    height: 100px; 
+    line-height: 100px;
+    color: $main-color;
+    text-align: center;
+    
+    em {
+      @include animation(bounce 0.5s);
+    }
+  }
+
   header {
     position: relative;
     min-height: 70px;
@@ -27,18 +58,6 @@
         max-width: 100%;
       }
     } 
-    
-    h2 {
-      font-size: 14px;
-      padding-bottom: 5px;
-    }
-    
-    h3 {
-      font-size: 16px; 
-      line-height: 21px;
-      color: $main-color;
-      font-weight: 300;
-    }
   }
    
   section {
@@ -76,5 +95,20 @@
         font-size: 14px;
       }
     }
+  }
+}
+
+@include keyframes(bounce) {
+  0% {
+    opacity: 0;
+    font-size: 40px;
+  }
+  50% {
+    opacity: 1;
+    font-size: 90px;
+  }
+  100% {
+    opacity: 1;
+    font-size: 60px;
   }
 }

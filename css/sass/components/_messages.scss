@@ -6,11 +6,29 @@
   display: block;
   width: 100%;
   overflow: hidden;
-  @include box-sizing(border-box);
+  position: sticky;
+  position: -webkit-sticky;
   
   p {
     padding: 15px 20px 15px 20px;
     color: #FFF;
     background: red;
+    @include animation(slide 0.5s);
+    @include box-sizing(border-box);
+    
+    &:before {
+      content: "!";
+      font-family: "icons";
+      margin-right: 10px;
+    }
+  }
+}
+
+@include keyframes(slide) {
+  0% {
+    margin-top: -100%;
+  }
+  100% {
+    margin-top: 0;
   }
 }
