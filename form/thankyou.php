@@ -33,12 +33,12 @@
 		      var message = getUrlParameter('message'); ;
 		      myDataRef.push({name: name, email: email, amount: amount, message: message});
 
-		      	window.setTimeout(function(){
+		    //   	window.setTimeout(function(){
 
-				        // Move to a new location or you can do something else
-				        window.location.href = "http://nickvw.be/fundwall/done.php";
+				  //       // Move to a new location or you can do something else
+				  //       window.location.href = "http://nickvw.be/fundwall/done.php";
 
-				  }, 2500);
+				  // }, 2500);
 		   
 		   });  
   </script>
