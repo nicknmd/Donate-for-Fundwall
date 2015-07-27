@@ -15,8 +15,12 @@
 
 // Components -------------
 
-// @import 'components/modal';
+@import 'components/header';
+@import 'components/details';
+@import 'components/powered-by';
+@import 'components/stream';
+@import 'components/url';
 
 // Layouts ---------
 
-@import 'layout/app';
+@import 'layout/wall';
