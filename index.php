@@ -6,12 +6,14 @@ require('lib/Stripe.php');
 // Load configuration settings
 $config = require('config.php');
 
-// Force https
-// if ($config['test-mode'] && $_SERVER['HTTPS'] != 'on') {
-//   header('HTTP/1.1 301 Moved Permanently');
-//   header('Location: https://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]);
-//   exit;
-// }
+/*
+Force https
+if ($config['test-mode'] && $_SERVER['HTTPS'] != 'on') {
+  header('HTTP/1.1 301 Moved Permanently');
+  header('Location: https://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]);
+  exit;
+}
+*/
 
 if ($_POST) {
     Stripe::setApiKey($config['secret-key']);
@@ -23,6 +25,8 @@ if ($_POST) {
     $email      = $_POST['email'];
     $message     = $_POST['message'];
     $amount     = (float) $_POST['amount'];
+    $chance = $amount/25;
+    $chances = round($chance, 1); 
 
     try {
         if ( ! isset($_POST['stripeToken']) ) {
@@ -39,19 +43,21 @@ if ($_POST) {
 
 
         // Build and send the email
-        $headers = 'From: nick@digiti.be' . "\r\n" .
-    'Reply-To: nick@digiti.be' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+        $headers = 'From: info@belcham.org' . "\r\n" .
+		'Reply-To: info@belcham.org' . "\r\n" .
+		'X-Mailer: PHP/' . phpversion();
+     	$headers .= "MIME-Version: 1.0" . "\r\n";
+	 	$headers .= "Content-Type: text/html; charset=ISO-8859-1" . "\r\n";
 
         // Find and replace values
-        $find    = array('%name%', '%amount%');
-        $replace = array($name, '$' . $amount);
+        $find    = array('%name%', '%amount%', '%chances%');
+        $replace = array($name, '$' . $amount, $chances);
 
         $body = str_replace($find, $replace , $config['email-message']) . "\n\n";
-        $body .= 'Amount: $' . $amount . "\n";
-        $body .= 'Email: ' . $email . "\n";
-        $body .= 'Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
-        $body .= 'Transaction ID: ' . $donation['id'] . "\n\n\n";
+        $body .= '<br>Amount: $' . $amount . "\n";
+        $body .= '<br>Email: ' . $email . "\n";
+        $body .= '<br>Date: ' . date('M j, Y, g:ia', $donation['created']) . "\n";
+        $body .= '<br>Transaction ID: ' . $donation['id'] . "\n\n\n";
 
         $subject = $config['email-subject'];
 
@@ -61,7 +67,7 @@ if ($_POST) {
         }
 
         // Forward to "Thank You" page
-        header("Location: http://nickvw.be/fundwall/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
+        header("Location: http://client.digiti.be/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
         exit;
 
     } catch (Exception $e) {
