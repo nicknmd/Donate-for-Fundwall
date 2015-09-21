@@ -131,26 +131,26 @@ if ($_POST) {
           <div class="form-row form-amount has-segmented-picker">
             <ul class="segemented-picker">
               <li class="set-amount">
-                <input type="radio" name="amount" value="25" id="amount-25" checked="checked">
+                <input type="radio" name="amount-picker" value="25" id="amount-25" checked="checked">
                 <label for="amount-25">$25</label>
               </li>
               <li class="set-amount">
-                <input type="radio" name="amount" value="50" id="amount-50">
+                <input type="radio" name="amount-picker" value="50" id="amount-50">
                 <label for="amount-50"> $50</label>
               </li>
               <li class="set-amount">
-                <input type="radio" name="amount" value="100" id="amount-100">
+                <input type="radio" name="amount-picker" value="100" id="amount-100">
                 <label for="amount-100"> $100</label>
               </li>
               <li class="other-amount">
-                <input type="radio" name="amount" value="0" id="amount-other">
+                <input type="radio" name="amount-picker" value="0" id="amount-other">
                 <label for="amount-other" class="other"> Other</label> 
               </li>
             </ul>
           </div>
           
           <div class="form-row has-icon stick-to-previous form-amount hidden">
-            <input type="text" class="amount text" placeholder="Amount" disabled>
+            <input type="text" class="amount text" placeholder="Amount" name="amount" disabled>
             <em class="icon">$</em>
           </div>
           
