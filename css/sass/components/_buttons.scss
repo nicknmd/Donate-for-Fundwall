@@ -18,7 +18,7 @@
 
 .btn-action {
   background: $main-color;
-  color: #FFF;
+  color: $alt-color;
   
   &:hover {
     background: lighten($main-color,10);

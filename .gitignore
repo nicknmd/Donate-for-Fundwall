@@ -4,5 +4,4 @@
 .sass-cache
 
 # Node
-form/css/node_modules
-wall/css/node_modules
+css/node_modules

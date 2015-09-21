@@ -39,7 +39,7 @@
       left: 0px; top:0px;
       line-height: 40px;
       text-align: center;
-      color: $main-color;
+      color: #888;
       pointer-events: none;
       font-size: 16px;
     } 
@@ -126,6 +126,7 @@
     border-radius: 5px;
     background: #FFF;
     table-layout: fixed;
+    overflow: hidden;
     @include box-sizing(border-box);
     
     &.stick-to-next {
@@ -159,7 +160,8 @@
         }
           
         input[type=radio]:checked + label {
-          color: $main-color;
+          color: $alt-color;
+          background: $main-color;
         }
           
         input[type=radio]:checked + label.other:after {

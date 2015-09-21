@@ -80,7 +80,7 @@ if ($_POST) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Belcham - Donate now</title>
+  <title>BelCham - Donate now</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://js.stripe.com/v2"></script>
   <script type="text/javascript">
@@ -99,8 +99,8 @@ if ($_POST) {
           <div class="logo">
             <img src="assets/img/logo.svg" />
           </div>
-          <h2>Belcham</h2>
-          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
+          <h2>BelCham</h2>
+          <h3>Support Belcham and win fantastic prizes!</h3>
         </header>
     
         <div class="messages">

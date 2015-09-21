@@ -53,8 +53,8 @@
           <div class="logo">
             <img src="assets/img/logo.svg" />
           </div>
-          <h2>Belcham</h2>
-          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
+          <h2>BelCham</h2>
+          <h3>Support Belcham and win fantastic prizes!</h3>
         </header>
     
         <div class="messages">

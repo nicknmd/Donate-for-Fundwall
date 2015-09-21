@@ -10,7 +10,12 @@ html {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   color: $text-color;
-  background: $bg-color;
+  height: 100%;
+}
+
+body {
+  background: url('../img/overlay-background.png') center center no-repeat;
+  background-size: cover;
 }
 
 a, 

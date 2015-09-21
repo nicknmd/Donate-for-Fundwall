@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>Stripe Donation Form</title>
+	<title>BelCham</title>
   <link rel="stylesheet" type="text/css" href="style.css" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -20,8 +20,8 @@
           <div class="logo">
             <img src="assets/logo.svg" />
           </div>
-          <h2>Belcham</h2>
-          <h3>Help us to raise funds to support Belgian students in the USA.</h3>
+          <h2>BelCham</h2>
+          <h3>Support Belcham and win fantastic prizes!</h3>
         </header>
     
         <div class="messages">
