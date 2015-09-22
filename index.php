@@ -26,7 +26,7 @@ if ($_POST) {
     $message     = $_POST['message'];
     $amount     = (float) $_POST['amount'];
     $chance = $amount/25;
-    $chances = round($chance, 1); 
+    $chances = round($chance); 
 
     try {
         if ( ! isset($_POST['stripeToken']) ) {
@@ -67,7 +67,7 @@ if ($_POST) {
         }
 
         // Forward to "Thank You" page
-        header("Location: http://client.digiti.be/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
+        header("Location: http://belcham.org/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
         exit;
 
     } catch (Exception $e) {

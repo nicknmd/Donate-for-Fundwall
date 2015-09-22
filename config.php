@@ -6,10 +6,10 @@ return array(
     'test-mode'       => false,
 
     // Secret Key from Stripe.com Dashboard
-    'secret-key'      => 'sk_test_CESJU65iKUEsRC8Rf8n0X414',
+    'secret-key'      => 'sk_live_w5TCUurzCoWu5wIUHNPzwaG0',
 
     // Publishable Key from Stripe.com Dashboard
-    'publishable-key' => 'pk_test_FpWWPUMFBd2daINRgMxORPVC',
+    'publishable-key' => 'pk_live_Nx7Rrpe86vQo9IIrwZU8CmT3',
 
     // Subject of email receipt
     'email-subject'   => 'Thank you for your donation!',
