@@ -68,7 +68,7 @@
         </section>
         
         <footer>
-    		  <a href="index.php" class="btn btn-m btn-action"> Back To Form </a>
+    		  <a href="http://belcham.org/donate" class="btn btn-m btn-action"> Back To Form </a>
         </footer>
         
         

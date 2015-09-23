@@ -67,7 +67,7 @@ if ($_POST) {
         }
 
         // Forward to "Thank You" page
-        header("Location: http://belcham.org/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
+        header("Location: http://client.digiti.be/donate/thankyou.php?name=$name&email=$email&amount=$amount&message=$message");
         exit;
 
     } catch (Exception $e) {
