@@ -31,14 +31,18 @@
 		      var email = getUrlParameter('email');
 		      var amount = getUrlParameter('amount'); ;
 		      var message = getUrlParameter('message'); ;
-		      myDataRef.push({name: name, email: email, amount: amount, message: message});
+          
+          myDataRef.push({name: name, email: email, amount: amount, message: message}, function(){
+           window.location.href = "http://client.digiti.be/donate/done.php";
+          });
+		    
+          // window.setTimeout(function(){
 
-		    //   	window.setTimeout(function(){
+          //       // Move to a new location or you can do something else
+          //       window.location.href = "http://client.digiti.be/donate/done.php";
 
-				  //       // Move to a new location or you can do something else
-				  //       window.location.href = "http://nickvw.be/fundwall/done.php";
-
-				  // }, 2500);
+          // }, 2500);
+       
 		   
 		   });  
   </script>

@@ -5,11 +5,11 @@
 <!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>BelCham</title>
-  <link rel="stylesheet" type="text/css" href="style.css" media="all">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<title>BelCham - Donate now</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
   <div class="app">
@@ -18,7 +18,7 @@
         
         <header>
           <div class="logo">
-            <img src="assets/logo.svg" />
+            <img src="assets/img/logo.svg" />
           </div>
           <h2>BelCham</h2>
           <h3>Support Belcham and win fantastic prizes!</h3>
@@ -29,20 +29,14 @@
         </div>
         
         <section>
-          
-          <h1 style="font-weight: 700">
-			Donation Succeeded! 
-		  </h1>
-		  <br>
-		  <h2>
-				Thank you for your donation.
-		  </h2>
-		  <br>
-		   <a href="http://nickvw.be/fundwall">
-				Back to form
-		   </a>
-          
+          <div class="large-icon"><em class="icon">v</em></div>
+          <h1> Thank you for your donation. </h1>
+          <p class="center"> We have sent you a receipt-email from this donation.</p>
         </section>
+        
+        <footer>
+    		  <a href="http://belcham.org/donate" class="btn btn-m btn-action"> Back To Form </a>
+        </footer>
         
         
       </div>
