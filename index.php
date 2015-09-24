@@ -26,7 +26,8 @@ if ($_POST) {
     $message     = $_POST['message'];
     $amount     = (float) $_POST['amount'];
     $chance = $amount/25;
-    $chances = round($chance); 
+    $chances = round($chance);
+    $error = "";
 
     try {
         if ( ! isset($_POST['stripeToken']) ) {
@@ -103,24 +104,25 @@ if ($_POST) {
           <h3>Support Belcham and win fantastic prizes!</h3>
         </header>
     
-        <div class="messages">
+        <div class="messages <? if($error != "" ) { echo("active"); } ?>">
+          <? if($error != "") echo("<p>".$error."</p>"); ?>
           <!-- Error messages go here go here -->
         </div>
         
         <section>
           
           <div class="form-row has-icon form-first-name">
-            <input type="text" name="first-name" class="first-name text" placeholder="Your name">
+            <input type="text" name="first-name" class="first-name text" placeholder="Your name" value="<? if($error != "" ) { echo($_POST['first-name']); } ?>">
             <em class="icon">u</em>
           </div>
           
           <div class="form-row has-icon form-email">
-            <input type="text" name="email" class="email text" placeholder="Your email">
+            <input type="text" name="email" class="email text" placeholder="Your email" value="<? if($error != "" ) { echo($_POST['email']); } ?>">
             <em class="icon">e</em>
           </div>
   
           <div class="form-row has-icon form-message">
-            <input type="text" row="3" name="message" class="message text" placeholder="Optional Message">
+            <input type="text" row="3" name="message" class="message text" placeholder="Optional Message" value="<? if($error != "" ) { echo($_POST['message']); } ?>">
             <em class="icon">m</em>
           </div>
           
