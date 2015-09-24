@@ -10,6 +10,31 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script>
+      jQuery(document).ready(function($) {
+
+      if (window.history && window.history.pushState) {
+
+        $(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              alert('Thank you! Come again.');
+                window.location='http://belcham.org/donate';
+                return false;
+            }
+          }
+        });
+
+        window.history.pushState('forward', null, './#forward');
+      }
+
+    });
+    </script> 
 </head>
 <body>
   <div class="app">
