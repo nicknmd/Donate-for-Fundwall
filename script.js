@@ -40,8 +40,12 @@ $(function() {
 			.removeProp('disabled')
 			.focus();
 	};
+	$amount.on('blur', function(){
+    if($(this).val() == "") $(this).val(0);
+  });
 
 	$('.donation-form').on('submit', function(event) {
+  	
 		// Disable processing button to prevent multiple submits
 		$('.submit-button')
 			.prop('disabled', true)

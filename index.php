@@ -150,7 +150,7 @@ if ($_POST) {
           </div>
           
           <div class="form-row has-icon stick-to-previous form-amount hidden">
-            <input type="text" class="amount text" placeholder="Amount" name="amount" disabled>
+            <input type="text" class="amount text" placeholder="Amount" name="amount" value="25" />
             <em class="icon">$</em>
           </div>
           
